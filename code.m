@@ -3,13 +3,13 @@
 
 % Dimensions of compartments
 
-d1 = 75e-4; 			% cm
-d21 = 30e-4; 			% cm
-d22 = 15e-4; 			% cm
+% d1 = 75e-4; 			% cm
+% d21 = 30e-4; 			% cm
+% d22 = 15e-4; 			% cm
 
 % Commented till Question 6
-% d21 = 47.2470e-4;       % E9 cm
-% d22 = d21;               % E9 cm
+d21 = 47.2470e-4;       % E9 cm
+d22 = d21;               % E9 cm
 %%%%%%%
 l1 = 1.5;			% dimensionless
 l21 = 3.0;			% dimensionless
@@ -81,7 +81,7 @@ ylabel('V(Volts)');
 title('Steady-state voltage of Figure 2(a)');
 legend('Branch 1','Branch 21','Branch 22');
 %Changing A according to Figure 2b
-A2 = A;
+A2 = A1;
 A2(3,:) = [0 0 0 0 -exp(-l22) exp(l22)];
 x2 = A2\b;
 v31 = x2(1)*exp(-y1)+x2(2)*exp(y1);
@@ -118,7 +118,7 @@ ylabel('V(Volts)');
 title('Steady-state voltage of Figure 2(c)');
 legend('Branch 1','Branch 21','Branch 22');
 %Changing b according to Figure 2d
-b2 = b;
+b2 = b1;
 b2(3) = rl22*iapp;
 x4 = A2\b2;
 v51 = x4(1)*exp(-y1)+x4(2)*exp(y1);
